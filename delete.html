@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOS Burger</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+    background-color: #f0f0f0;
+  }
+    .sidebar {
+      min-height: 100vh;
+      background-image: url('../img/covers/bg.jpg');
+      border-right: 1px solid #ddd;
+    }
+    .sidebar .nav-link {
+      color: #9e9e9e;
+      font-weight: 500;
+    }
+    .sidebar .nav-link.active {
+      background-color: #f0f0f0;
+      color: #000;
+    }
+    
+  </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Audiowide&family=Bebas+Neue&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="icon" href="img/icons/head.png" type="image/png">
+</head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-2 sidebar p-3 position-fixed">
+                <img src="../img/covers/head2.jpg" alt="" class="img-fluid w-100">
+                <br>
+                <br>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                    <a class="nav-link" href="../index.html"><i class="bi bi-grid-fill"></i>  DASHBORD</a>
+                    </li>
+                    <li class="nav-item">
+                    <!-- <a class="nav-link" href="#totalitems">TOTAL ITEMS</a> -->
+                    </li>
+                    <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Catalog</a>
+                    </li> -->
+                </ul>
+                <hr>
+                <!-- <h6>Product Category</h6> -->
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                    <a class="nav-link" href="order.html"><i class="bi bi-cart-plus"></i> Order</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="customers.html"><i class="bi bi-people"></i>  customers</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="orders.html" ><i class="bi bi-basket3"></i> Orders</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="Storemanagment.html"><i class="bi bi-shop"></i> Store</a>
+                    </li>
+                </ul>
+                </div>
+
+                <!-- Main content -->
+                <div class="col-10 p-4 col-10 offset-2">
+                    <div class="card shadow-sm p-4 rounded">
+                        <div class="container bg-white rounded " >
+                            <div class="container mt-4">
+                                <a href="UpdateProduct.html" class="btn btn-primary btn-lg">Update</a>
+                                <a href="Storemanagment.html" class="btn btn-primary btn-lg">View</a>
+                                        <a href="addProduct.html" class="btn btn-primary btn-lg">Add</a>
+                                        <a href="delete.html" class="btn btn-primary btn-lg">Delete</a>
+                                    </div>
+                                    <br>
+                            <div class="container bg-white rounded p-4 border " >
+                                <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                                    <div class="container-fluid">
+                                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                        </button>
+                                        <a class="navbar-brand" href="#"><h1>Update Product</h1></a>
+                                        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                                            <form class="d-flex ms-auto" role="search">
+                                                <input class="form-control border-dark me-2" type="search" placeholder="Enter Product ID" aria-label="Search by ID" id="searchBox">
+                                                <button class="btn btn-outline-success" onclick="productSearch()" type="button">Search</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </nav>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="mb-3">
+                                            <p>Product Name</p>
+                                            <input class="form-control me-2" type="text" placeholder="Product Name" id="showName" readonly>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <select class="form-select w-75" id="showCatagory" aria-label="Default select example" onchange="updateImage(this.value)">
+                                                    <option disabled selected>Category</option>
+                                                    <option value="1">Burger</option>
+                                                    <option value="2">Submarine</option>
+                                                    <option value="3">Fries</option>
+                                                    <option value="4">Pasta</option>
+                                                    <option value="5">Chicken</option>
+                                                    <option value="6">Drink</option>
+                                                </select>
+
+                                            </div>
+                                            <div class="col">
+                                                <p>Quantity</p>
+                                                <div class="input-group m-3" style="max-width: 60px;">
+                                                    <!-- <button class="btn btn-outline-secondary" type="button" onclick="decrement()">-</button> -->
+                                                    <input type="number" id="getorShowQty" class="form-control text-center" value="1" min="0">
+                                                    <!-- <button class="btn btn-outline-secondary" type="button" onclick="increment()">+</button> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlTextarea1" class="form-label">Discription</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <div class="col">
+                                                <img src="img/icons/addimage.jpg" id="previewImage" alt="" width="200" class="ms-auto rounded-5 border">
+                                            </div>
+                                            <div class="col">
+                                                <input type="text" class="form-control w-75" placeholder="Price" id="getOrShowPrice">
+                                                <br>
+                                                <input type="text" class="form-control w-75" placeholder="Discount" id="getOrShowDis">
+                                                <br>
+                                                <!-- <input type="text" class="form-control w-75" placeholder="Size"> -->
+                                                <select class="form-select w-75" aria-label="Default select example" placeholder="Size" id="showSize">
+                                                    <option selected>Regular</option>
+                                                    <option value="1">Mideum</option>
+                                                    <option value="2">Large</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row border rounded bg-white">
+                                            <div class="col-9">
+                                                <label for="customRange4" class="form-label ps-5 pt-3"><h5><i class="bi bi-alarm">  </i>Houres left</h5></label>
+                                                <br>
+                                                <input type="range" class="form-range w-75 ps-5" min="0" max="24" value="24" id="customRange4">
+                                                <br>
+                                                <div class="d-flex justify-content-center">
+                                                    <div class="d-flex align-items-center ps-5">
+                                                        <output for="customRange4" id="showExp" class="me-2 fs-5"></output>
+                                                        <i class="bi bi-clock-history fs-5"></i>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-3">
+                                                <img src="img/icons/time.jpg" alt="" width="100" class="">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <br>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button class="btn btn-primary me-md-2" type="button" onclick="Delete()">Delete</button>
+                                <a href="" class="btn btn-primary">View</a>
+                            </div>
+                        </div>  
+                    </div>
+                    </div>
+                </div>
+
+                <div id="dangerAlert" class="alert alert-danger d-flex justify-content-center text-center position-fixed top-50 start-50 translate-middle z-3 d-none"
+                    role="alert" style="width: 550px;" data-aos="zoom-in">
+                    <div>
+                        <i class="bi bi-check-circle fs-1 d-block mb-2"></i>
+                        <p class="m-0">Product Deleted successfully!</p>
+                    </div>
+                </div>
+
+                        
+        <script>
+            // This is an example script, please modify as needed
+            const rangeInput = document.getElementById('customRange4');
+            const rangeOutput = document.getElementById('rangeValue');
+
+            // Set initial value
+            rangeOutput.textContent = rangeInput.value;
+
+            rangeInput.addEventListener('input', function() {
+                rangeOutput.textContent = this.value;
+            });
+        </script>
+        <script src="app.js"></script>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
